@@ -67,6 +67,11 @@ function TicTacToe(){
 		// console.log(squares);
 	}
 
+	const handleReset = () =>{
+		setWinner(null);
+		setCells(Array(9).fill(''));
+	}
+
 	const Cell = ({num}) => {
 		return <td onClick={() => handleClick(num)}>{cells[num]}</td>
 	}
@@ -98,6 +103,7 @@ function TicTacToe(){
 			{winner && (
 				<>
 					<p>Player {winner} is the Winner</p>
+					<button onClick={handleReset}>Play Again!</button>
 				</>
 			)}
 		</div>
