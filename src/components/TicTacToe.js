@@ -77,9 +77,14 @@ function TicTacToe(){
 	}
 
 	return(
-		<div className='container'>
+		<div className='wrapper'>
 
-			<p>Player <span>{turn}</span></p>
+			{winner && (
+				<div className='alert alert-success' role='alert'>
+					<p>Player {winner} is the Winner</p>
+				</div>
+			)}
+			<p>Turn : Player <span>{turn}</span></p>
 			<table>
 				<tbody>
 					<tr>
@@ -102,8 +107,7 @@ function TicTacToe(){
 
 			{winner && (
 				<>
-					<p>Player {winner} is the Winner</p>
-					<button onClick={handleReset}>Play Again!</button>
+					<button onClick={handleReset} className="btn btn-outline-success">Play Again!</button>
 				</>
 			)}
 		</div>
