@@ -110,6 +110,11 @@ function TicTacToe(){
 					<button onClick={handleReset} className="btn btn-outline-success">Play Again!</button>
 				</>
 			)}
+			{!winner && (
+				<>
+					<button onClick={handleReset} className="btn btn-outline-danger">Reset</button>
+				</>	
+			)}
 		</div>
 	)
 }
